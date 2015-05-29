@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+       <title>{{ title }}</title>
+       
+       <!-- Referencing admin.css style sheet file -->
+       <link rel='shortcut icon' type='image/x-icon' href='/stylesheets/images/favicon.ico' />
+       <link rel="stylesheet" type="text/css" href="/stylesheets/admin.css">
+       <link rel="stylesheet" type="text/css" href="/stylesheets/boilerplate.css">
+       <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans">
+	
+       <!-- Referencing adminInterface.js javascript file -->
+       <script src="/javascripts/administrator.js"></script>
+
+       <!-- Referencing networkView.js javascript file -->
+		<script src="/javascripts/networkView.js"></script>
+		<script src="/javascripts/helper.js"></script>
+       	
+       <!-- Retrieving variables from server-->
+		<script>
+			
+			// list of networks (strings) 
+        	var networks = {{{networkList}}};
+        	
+        	// name and kind of network
+        	var networkInfo = {{{networkInfo}}};
+        	
+        	// list of apps (strings)
+        	var apps = {{{appNames}}};
+        	
+        	// list of rdts (strings)
+        	var rdts = {{{rdtList}}};
+        	
+        	// list of devices (strings)
+        	var devices = {{{deviceList}}};
+        	var deviceNetworks = {{{deviceNetworkList}}};
+        	//list of network connections
+        	
+        	var networkConnections = {{{networkConnections}}};
+        	
+     	</script>
+
+     	<script>
+     		window.onload = function(){
+     			init();
+     			viewInit();
+     		}
+     	</script>
+</head>
+<body>
+	<div id="mainview">
+      <div id="toolbar">
+      	<ul class="navMenu">
+			<li id="networkWrapper">
+			<a id="navButton">Networks</a>
+				<ul id="networkMenu">
+				<!-- Form for adding networks -->
+				<li>
+					<!-- Form for adding a network -->                	
+                	<!-- The number of networks that will be created -->
+					<input class="inputField" id="numNetworks" type="number" name="numNetworks" placeholder="Number of Networks" min=0>
+				
+					<!-- Button for adding Networks -->
+					<input class="inputButton" id="createNetworksButton" value="Create Networks" readonly onclick="addNetworksPost()">
+				
+					<!-- Drop down box that contains a list of networks -->
+					<select id="selectedNetworkList" class="selectField" name="networkValue" onchange="selectedNetworkPost(this)"></select>
+					
+					<!-- Text input field for editing the name of the network -->
+					<input class="inputField" id="netName" type="text" name="networkName" placeholder="Network Name" onkeydown="if (event.keyCode == 13) { editNetworkPost();}">
+								
+					<!-- Text input field for editing the number of users on the network -->
+					<input class="inputField" id="netType" type="text" name="networkType" placeholder="Network Type" onkeydown="if (event.keyCode == 13) { editNetworkPost();}">
+					
+					<!-- Button to edit network -->
+					<input class="inputButton" id="editNetwork" value="Update Network" readonly onclick="editNetworkPost()">
+					
+					<!-- Button to remove network -->
+					<input class="inputButton" id="removeNetwork" value="Remove Network" readonly onclick="removeNetworkPost()">
+				
+					<!-- Button to remove network -->
+					<input class="inputButton" id="removeAllNetworks" value="Remove All Networks" readonly onclick="removeAllNetworksPost()">
+						
+					<!-- Drop down box that contains a list of networks -->
+					<select id="connect2" class="selectField" name="connect2" onchange="connectNetworksPost(this)"></select>		
+					
+				</li>
+				</ul>
+			</li>
+			<li id="deviceWrapper">
+				<a id="navButton">Devices</a>
+				<ul id="deviceMenu">
+				<li><!-- Form for adding devices -->
+				
+					<!-- The number of devices that will be created -->
+					<input class="inputField" id="numDevices" type="number" name="numDevices" placeholder="Number of Devices" min=0>
+					
+					<!-- Button for adding Devices -->
+					<input class="inputButton" id="createDevicesButton" readonly value="Create Devices" onclick="addDevicesPost()">
+									
+					<!-- Drop down box that contains a list of devices -->
+					<select id="deviceList" class="selectField" name="deviceValue"></select>
+					
+					<!-- Button to remove Device -->
+					<input class="inputButton" id="removeDevice" readonly value="Remove Device" onclick="removeDevicePost()">
+					
+					<!-- Button to remove all devices -->
+					<input class="inputButton" id="removeAllDevices" readonly value="Remove All Devices" onclick="removeAllDevicesPost()">
+				</li>
+				</ul>	
+			</li>
+			<li id="appWrapper">
+				<a id="navButton">Apps</a>
+				<ul id="appMenu">
+				<li>
+				
+						<!-- Text input field importing apps -->
+						<input class="inputButton" id="appName" name="appName" type="file" multiple accept="application/zip">
+					
+						<!-- Button that will use text field "appName" to import applications -->
+						<input class="inputButton" id="importApp" readonly value="Import" onclick="importAppPost()">
+				
+						<!-- Drop down box that contains a list of Apps -->
+						<select id="appList" class="selectField" name="appValue"></select>
+				
+						<!-- Button that will remove the app selected in appList -->
+						<input class="inputButton" id="removeApp" readonly value="Remove" onclick="removeAppPost()">
+				
+						<!-- Button to remove all Apps -->
+						<input class="inputButton" id="removeAllApps" readonly value="Remove All Apps" onclick="removeAllAppsPost()">
+				</li>
+				</ul>
+			</li>
+			<li id="RDTWrapper">
+				<a id="navButton">RDTs</a>
+				<ul id="RDTMenu">
+				<li>
+				
+						<!-- Text input field importing apps -->
+						<input class="inputButton" id="rdtName" type="file" multiple name="rdtName" accept="application/zip">
+				
+						<!-- Button that will use text field "appName" to import applications -->
+						<input class="inputButton" id="importRDT" readonly value="Import" onclick="importRDTPost()">
+				
+						<!-- Drop down box that contains a list of Apps -->
+						<select id="RDTList" class="selectField" name="RDTValue"></select>
+						
+						<!-- Button that will use the rdt selected in rdtList -->
+						<input class="inputButton" id="useRDT" readonly value="Use RDT" onclick="useRDTPost()">
+				
+						<!-- Button that will remove the app selected in appList -->
+						<input class="inputButton" id="removeRDT" readonly value="Remove" onclick="removeRDTPost()">
+
+						<!-- Button to remove all RDTs -->
+						<input class="inputButton" id="removeAllRDTs" readonly value="Remove All RDTs" onclick="removeAllRDTsPost()">
+
+				</li>
+				</ul>
+			</li>
+			<li>
+				<!-- Button for old testing -->
+				<a id="navLink" onclick="resetDatabasePost()">Reset Database</a>
+			</li>
+			<li>
+				<a id="navLink" href="viewStates">View States</a>
+			</li>
+			<li>
+				<a id="navLink" href="activityLog">Activity Log</a>
+			</li>
+			<li>
+				<a id="navLink" class="logoutButton" onclick="logoutPost()">Log out</a>
+			</li>
+		</ul>
+	  </div>
+      <div id="simulation">	
+			<p id="error">{{errorMessage}}</p>
+			<div id="canvasDiv">
+				<canvas id="canvas">
+					Your browser does not support the HTML5 canvas tag.
+				</canvas>
+			</div>
+      </div>
+      <div id="logo">Solid Monkey<div id="mascot"></div></div>
+    </div>
+  </body>
+</html>

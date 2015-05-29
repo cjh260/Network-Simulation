@@ -1,0 +1,81 @@
+html {
+    background-color: white;
+}
+
+body {
+    position: relative;
+    background: radial-gradient(circle, #0000AA, #3333FF, #7777FF);
+}
+
+#mainview {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#simulation {
+    position: relative;
+    width: 80%;
+    height: 77%;
+}
+
+#logo {
+    position: relative;
+    float: center;
+    width: 60%;
+    height: 10%;
+    blackground-color: black;
+}
+
+#toolbar {
+    position: relative;
+    float: up;
+    width: 100%;
+    height: 3%;
+    background-color: black;
+}
+
+#available {
+    position: absolute;
+    float: down;
+    width: 20%;
+    height: 20%;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    color: white;
+}
+
+#activity {
+    position: absolute;
+    float: down;
+    left: 0;
+    background-color: black;
+    color: white;
+}
+
+.navlinks {
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+	color: white;
+	line-height: 100%;
+	padding: 0px 10px;
+	font-weight: 700;
+	border: 1px solid black;
+}
+
+#button {
+    float: left center;
+    vertical-align: center;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    color: white;
+    width: 10%;
+    height: 100%;
+}
+
+#button:hover {
+    background-color: grey;
+    color: black;
+}

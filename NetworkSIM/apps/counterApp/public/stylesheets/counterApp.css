@@ -1,0 +1,45 @@
+#device	{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 14%;
+	width: 50%;
+	height: 85%;
+	background:url(images/dev.jpg) no-repeat 0 0;
+	background-size: 100%;
+}
+
+#devScreen	{
+	position: relative;
+	padding-top: 5%;
+	padding-left: 3%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 49%;
+	height: 45%;
+}
+
+#appTitle	{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	height: font-family: Arial, Helvetica, sans-serif;
+	font-size: 3vmax;
+}
+
+label	{
+	vertical-align: top;
+	position: relative;
+	padding-top: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 2vmin;
+}
+
+textarea {
+	position: relative;
+	padding-top: 1px;
+	resize: none;
+	height: 10%;
+	width: 90%;
+	font-size: 2vmin;
+}

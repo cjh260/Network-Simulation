@@ -1,0 +1,22 @@
+So Network topology in the transfer to mongo has become asynchronous, as such we must access the 
+methods which access mongo via asynchronous function calls.
+
+What does this mean?  This means that each net-top accessor method visible from the outside world (get device
+and get iterable for both the device list and the network list) must be accessed through asynchronous methods.
+
+This is done by using a callback function that does the behavior that is necessary.
+
+For example if you want to iterate through the elements of device iterator:
+
+net.deviceList.getIterator(function(devIt){
+	do stuff on devit
+	devit is the iterator for devices.
+}
+);
+
+or
+
+net.deviceList.getDevice(deviceName, function(device){
+	do stuff to device;
+}
+);

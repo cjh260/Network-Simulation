@@ -1,0 +1,300 @@
+/* LINK TO COLOR PALETTE. WE NEED TO STICK TO THE COLORS. http://app.coolors.co/31393c-2176ff-33a1fd-fdca40-f79824*/
+
+body {
+    position: relative;
+    size: 95% 95%;
+    background-color: #31393C;
+}
+
+#mainview {
+    position: relative;
+    width: 100%;
+}
+
+#simulation {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 95%;
+    height: 95%;
+}
+
+#navButton {
+	position: relative;
+	display: inline-block;
+	border-radius: 25px;
+    font-weight: bold;
+	font-family: "Open Sans";
+	font-size: 1.2vw;
+	margin-left: 15px;
+	padding: 5px;
+	transition: 0.15s;
+}
+
+#navButton:hover {
+	background-color: black;	
+}
+
+#navLink {
+	position: relative;
+	display: inline-block;
+	border-radius: 25px;
+    font-weight: bold;
+	font-family: "Open Sans";
+	font-size: 1.2vw;
+	margin-left: 15px;
+	padding: 5px;
+	transition: 0.15s;	
+}
+
+#navLink:hover {
+	background-color: black;	
+}
+
+.logoutButton{
+	float: right;
+	margin-right: 15px;
+}
+
+#toolbar {
+    position: relative;
+    width: 95%;
+    height: 4.5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: auto;
+    padding-bottom: auto;
+    z-index:1;
+    background-color: #2176FF;
+	border: 5px solid;
+	border-radius: 25px;
+	border-color: #33A1FD;
+    font-weight: bold;
+	font-family: "Open Sans";
+	font-size: 1.5vw;
+	color: white;
+}
+
+a{
+	color:white;
+	text-decoration: none;
+}
+
+#logo {
+	position: fixed;
+	right: 2%;
+	bottom: 2%;
+	width: 20%;
+	height: 7%;
+	border: 2px solid;
+	border-radius: 25px;
+	padding: 1%;
+	text-align: left;
+	font-weight: bold;
+	font-family: "Open Sans";
+	font-size: 2.5vw;
+	background-color: #FDCA40;
+}
+
+#mascot {
+	float: left;
+	width: 15%;
+	height: 90%;
+	margin-top: 2%;
+	background-color: black;
+	background: url("images/SolidMonkey.png") no-repeat;
+	background-size: 100%;
+}
+
+.inputButton {
+	margin-right: 3%;
+	margin-bottom: 5px;
+	width: auto;
+	height: auto;
+    background-color: grey;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1wv;
+	font-family: "Open Sans";
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-shadow: 1px 1px #666;
+    text-align: center;
+    opacity:0;
+    transition: 0.15s;
+}
+
+.inputButton:active {
+	background-color: lightgrey;
+}
+
+.inputField {
+	width: 200px;
+	margin: auto auto;
+	margin-bottom: 5px;
+	-webkit-border-radius: 5px;
+   	-moz-border-radius: 5px;
+  	border-radius: 5px;
+	opacity:0;
+	formaction = javascript:alert("Bingo!");
+	transition: 0.15s;
+}
+
+.selectField {
+	width: 100%;
+	margin: auto auto;
+	margin-bottom: 5px;
+	opacity:0;
+	transition: 0.15s;
+	overflow:hidden;
+   	-webkit-border-radius: 5px;
+   	-moz-border-radius: 5px;
+  	border-radius: 5px;
+   	font-size: 14px;
+   	border:none;
+    outline:none;
+   	padding: 5px;
+   	background: #F79824;
+}
+
+ul.navMenu, ul.navMenu ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+	position: relative;
+}
+		
+/*Style for 1st level menu header*/
+ul.navMenu li{ 
+   	position: relative; 
+   	display: inline;
+   	zoom: 1; /*Needed for IE*/
+   	
+   	text-align:right;
+}
+
+ul.navMenu li input{
+	/*Menu link styles*/
+    padding: 5px;
+}
+     
+/* Building menu items - for 2nd and more level menu items*/
+ul.navMenu ul{ 
+	visibility: hidden; /*initially menu item is hidden*/
+    position: absolute; /*absolute positioning is important for menu to float*/
+	width: auto;
+	height: auto;
+			
+	/*Formating of menu items*/
+    padding: 0;
+			
+	/*optional - to change position of 2nd level menu item*/
+	top: 100%; 
+    left: 0;
+    transition: 0.15s;
+}
+
+ul.navMenu ul li{ 
+	float: none;
+}
+									  
+ul.navMenu ul li{ 
+	width: 100%; 
+    display: block; 
+} 
+
+/* Menu item position for 3rd level and more */
+ul.navMenu ul ul{
+    left: 100%; 
+    top: 0; 
+}
+
+/* Hover effect for menu*/
+ul.navMenu li:hover > ul{ 
+    visibility: visible;
+    background-color: rgba(0,0,0,0.75);
+	border: 2px solid;
+	border-radius: 5px;
+	border-color: grey;
+    padding: 3%;
+}
+
+ul.navMenu li:hover .inputButton {
+	opacity: 1;
+}
+
+ul.navMenu li:hover .inputField {
+	opacity: 1;
+}
+
+ul.navMenu li:hover .selectField {
+	opacity: 1;
+}
+
+ul.navMenu li:hover #navButton {
+	background-color: black;
+	margin-right: 5%;
+}
+
+#canvasDiv{
+	margin-top: 10px;
+	height: 100%;
+	width: 100%;
+    position: relative;
+}
+
+#canvas {
+	background-color: lightgrey;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+#dialogoverlay{
+	display: none;
+	opacity: .8;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #FFF;
+	width: 100%;
+	z-index: 10;
+}
+#dialogbox{
+	display: none;
+	position: fixed;
+	background: #33A1FD;
+	border-radius:7px; 
+	width:550px;
+	z-index: 10;
+}
+
+#dialogbox > div{ background:#FFF; margin:8px; }
+#dialogbox > div > #dialogboxhead{ background: #2176FF; font-size:19px; padding:10px; color:#31393C; }
+#dialogbox > div > #dialogboxbody{ background:#31393C; padding:20px; color:#FFF; }
+#dialogbox > div > #dialogboxfoot{ background: #2176FF; padding:10px; text-align:right; }
+#dialogbox > div > #dialogboxfoot > .inputButton{ background:#31393C}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #2176FF; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
+}

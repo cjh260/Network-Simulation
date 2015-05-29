@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ title }}</title>
+	<link rel='shortcut icon' type='image/x-icon' href='/stylesheets/images/favicon.ico' />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/user.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/boilerplate.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans">
+    <script src="/javascripts/user.js"></script>
+    <script src="/javascripts/helper.js"></script>
+    <script src="/javascripts/userNetworkView.js"></script>
+    
+	
+	<script>
+	
+		// list of networks (strings) 
+        var networks = {{{networkList}}};
+        	
+        // list of apps (strings)
+        var apps = {{{appNames}}};
+        	
+       	// list of devices (strings)
+       	var devices = {{{deviceList}}};
+       	var deviceNetworks = {{{deviceNetworkList}}};
+       	//list of network connections
+        	
+       	var networkConnections = {{{networkConnections}}};
+				
+		// getting the network name that current device (logged in device) is connected too
+		var networkName = {{{ networkName }}};
+		
+		var deviceName = {{{ deviceName }}};
+		
+	</script>
+	
+	<script>
+     		window.onload = function(){
+     			init();
+     			viewInit();
+     		}
+    </script>
+	
+</head>
+<body>
+<div id="mainview">
+      <div id="toolbar">
+		<ul class="navMenu">
+			<li id="infoWrapper">
+			<a id="navButton">Info</a>
+			<ul id="infoMenu">
+				<li>
+				
+				<input class="inputField" id="currentDevice" type="text" readonly placeholder="No Device Connected">
+				<input class="inputButton" id="register" readonly value="Register Device" onclick="registerPost()">
+				<input class="inputButton" id="unregister" readonly value="Unregister Device" onclick="unregisterPost()">
+				
+				</li>	
+			</ul>
+			</li>
+			<li id="networkWrapper">
+			<a id="navButton">Network</a>
+			<ul id="networkMenu">
+			<li>
+					
+					<input class="inputField" id="networkName" type="text" readonly>
+					<select class="selectField" id="networkSelect" name="networkSelect">
+						<option value="default">Select a Network</option>
+					</select> 
+				
+					<!-- testing button -->
+					<input class="inputButton" id="join" readonly value="Join Network" onclick="joinNetworkPost()">
+				
+					<input class="inputButton" id="leave" readonly value="Leave Network" onclick="leaveNetworkPost()">
+			
+
+			</li>
+			</ul>
+			<li id="appWrapper">
+			<a id="navButton">Apps</a>
+			<ul id="appMenu">
+			<li>
+					
+					<select class="selectField" id="appSelect" name="appSelect">
+						<option value="default">Select an App</option>
+					</select> 
+				
+					<!-- testing button -->
+					<input id="runAppButton" class="inputButton" readonly value="Run App" onclick="runAppPost()">
+				
+			</li>
+			</ul>	
+			<li>
+			<a id="navLink" href="viewStates">View States</a>
+			</li>
+			<li>
+			<a id="navLink" href="activityLog">Activity Log</a>
+			</li>
+			<li>
+			<a id="navLink" class="logoutButton" onclick="logoutPost()">Log out</a>
+			</li>
+		</ul>
+      </div>
+      <div id="simulation">
+      <div id="canvasDiv">
+				<canvas id="canvas">
+					Your browser does not support the HTML5 canvas tag.
+				</canvas>
+			</div>
+      </div>
+      <div id="logo">Solid Monkey
+      		<div id="mascot"/>
+      </div>
+</div>
+</body>
+</html>

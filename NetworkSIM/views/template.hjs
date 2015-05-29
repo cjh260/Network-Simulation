@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>SolidMonkey</title>
+    <link rel='shortcut icon' type='image/x-icon' href='/stylesheets/images/favicon.ico' />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <!-- Referencing login.js javascript file -->
+	<script src="/javascripts/activityLog.js"></script>
+
+	<!-- Retrieving variables from server -->
+	<script>
+		var timeLogs = {{{ timeLogs }}};
+	</script>
+  </head>
+  <body>
+    <div id="mainview">
+      <div id="toolbar">
+		<div id="nav">
+			<a class="navlinks" href="/">Home</a>
+			<a class="navlinks" href="/login">User</a>
+			<a class="navlinks" href="/admin">Admin</a>
+			<a class="navlinks" href="/networkView">NetworkView</a>
+			<a class="navlinks" href="/viewStates">View States</a>
+			<a class="navlinks" href="/activityLog">Activity Log</a>
+		</div>
+      </div>
+      <div id="simulation">
+      
+      </div>
+      <div id="available">Available Devices/Networks Go Here</div>
+      <div id="activity">
+      	<textarea id="timeLogArea" rows="25" disabled readonly></textarea>
+      </div>
+      <div id="logo">Solid Monkey</div>
+    </div>
+  </body>
+</html>

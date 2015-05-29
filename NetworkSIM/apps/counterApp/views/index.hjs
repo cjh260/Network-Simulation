@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>SolidMonkey</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/counterApp.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans">
+    <script src="javascripts/index.js"></script>
+  </head>
+  <body>
+    <div id="mainview">
+      <div id="toolbar">
+		<ul class="navMenu">
+			<li>
+				<a id="navLink" href="javascript:history.back()">Return</a>
+			</li>
+		</ul>
+      </div>
+      <div id="simulation">
+      	<div id="device">
+			<!-- Div for device screen -->
+			<div id="devScreen">
+			
+				<div id="appTitle">Counter App</div><br>
+				<label>Global Count:</label>
+				<textarea cols="20" rows="1" disabled>0</textarea><br>
+				<label>Local Count:</label>
+				<textarea id="localCount" cols="20" rows="1" disabled>0</textarea><br>
+				<input id="increment" readonly onclick="incrementPost()" value="Increment">
+
+			</div>
+		</div>
+      </div>
+      <div id="logo">Solid Monkey
+      		<div id="mascot"/>
+      </div>
+    </div>
+  </body>
+</html>

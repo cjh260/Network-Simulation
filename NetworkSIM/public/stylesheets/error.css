@@ -1,0 +1,50 @@
+#message {
+	position: fixed;
+	top: 12px;
+	left: 12px;
+	height: 93%;
+	width: 45%;
+	border: 2px solid;
+	border-radius: 25px;
+	padding: 12px;
+	background-color: #33A1FD;
+	border-color: #2176FF;
+	text-align: center;
+	font-weight: bold;
+	font-family: "Verdana", sans-serif;
+	font-size: 25px;
+	color: white;
+}
+
+#gif {
+	position: fixed;
+	bottom: 12px;
+	right: 12px;
+	height: 70%;
+	width: 50%;
+	float: right;
+	border: 0px solid;
+	border-radius: 25px;
+	background: url("images/evilmonkey.gif") no-repeat;
+	background-size: 105%;
+}
+
+#logo {
+	position: fixed;
+	right: 12px;
+	top: 12px;
+	width: 48%;
+	height: 20%;
+	border: 2px solid;
+	border-radius: 25px;
+	padding: 12px;
+	text-align: center;
+	font-weight: bold;
+	font-family: "Open Sans";
+	font-size: 64px;
+	background-color: #FDCA40;
+}
+
+pre{
+	font-size: 65%;	
+}

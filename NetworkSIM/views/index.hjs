@@ -1,0 +1,67 @@
+<html>
+  <head>
+	    <title>Solid Monkey{{message}}</title>
+	    <link rel='shortcut icon' type='image/x-icon' href='/stylesheets/images/favicon.ico' />
+	    <link rel="stylesheet" type="text/css" href="/stylesheets/boilerplate.css">
+	    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans">
+	    <script src="/javascripts/index.js"></script>
+	    <script src="/javascripts/helper.js"></script>
+  </head>
+	  <body>
+	  <div id="dialogoverlay"></div>
+		<div id="dialogbox">
+	  	<div>
+	    	<div id="dialogboxhead"></div>
+	    	<div id="dialogboxbody"></div>
+	    	<div id="dialogboxfoot"></div>
+	  	</div>
+		</div>
+	    <div id="mainview">
+	      <div id="toolbar">
+	      	<ul class="navMenu">
+				<li>	
+				<a id="navButton">SignUp</a>
+				<ul>
+				<li>
+					<!-- Users information -->
+					<input class="inputField" id="username" name="username" type="text" placeholder="Username" onkeydown="if (event.keyCode == 13) { signUpPost();}">
+					<input class="inputField" id="password" name="password" type="password" placeholder="Password" onkeydown="if (event.keyCode == 13) { signUpPost();}">
+					<input class="inputButton" id="registerButton" value="Register" readonly onclick="signUpPost()">
+				</li>
+				</ul>
+				</li>
+				<li>
+				<a id="navButton">Login</a>
+				<ul>
+				<li>	
+					<input class="inputField" id="loginName" name="loginName" type="text" placeholder="Username" onkeydown="if (event.keyCode == 13) { loginPost();}">
+					<input class="inputField" id="loginPassword" name="loginPassword" type="password" placeholder="Password" onkeydown="if (event.keyCode == 13) { loginPost();}">				
+					<!-- Button that sends the form to the server, and joins a network with given token -->
+					<input class="inputButton" id="login" readonly value="Login" onclick="loginPost()" onkeydown="if (event.keyCode == 13) { loginPost();}">	
+				</li>
+				</ul>
+				</li>
+				<li>
+				<a id="navLink" class="logoutButton" onclick="createAdminPost()">Create Admin</a>
+				</li>			
+	      	</ul>
+	      </div>
+	      <!-- Div for Heading -->
+			<div id="greeting">
+				<h1 class="greeting">Welcome</h1>
+				<!-- Div for explanation -->
+				<div id="message">
+					Welcome to the web page of Group 5 for the team project of CS4770.
+					This is a simulation of a peer-to-peer network.
+					In the Admin page you can create new networks or view all of the networks that are already created as well as the devices on those networks.
+					The the User page you can simulate a device that can connect to a network by requesting a token for a particular network or sign in using a previous token.
+					Once connected to a network the device opens an application that allows it to increment a counter (displaying both local and global counts).
+				</div>
+			</div>
+	    </div>
+	    <div id="logo">Solid Monkey
+	    	<div id="mascot"></div>
+	    </div>
+	</body>
+</html>

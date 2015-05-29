@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>SolidMonkey</title>
+    <link rel='shortcut icon' type='image/x-icon' href='/stylesheets/images/favicon.ico' />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/activityLog.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/boilerplate.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans">
+    <!-- Referencing login.js javascript file -->
+	<script src="/javascripts/activityLog.js"></script>
+
+	<!-- Retrieving variables from server -->
+	<script>
+		var timeLogs = {{{ timeLogs }}};
+	</script>
+  </head>
+  <body>
+    <div id="mainview">
+      <div id="toolbar">
+		<ul class="navMenu">
+			<li>
+				<a id="navLink" href="javascript:history.back()">Return</a>
+			</li>
+		</ul>
+      </div>
+      <div id="simulation">
+      <!-- Div for Activity Monitor -->
+			<div id="activityFeed">
+				<h2>Activity Monitor:</h2>
+				<textarea id="timeLogArea" rows="25" disabled readonly></textarea>
+			</div>
+      </div>
+      <div id="logo">Solid Monkey
+      		<div id="mascot"/>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ title }}</title>
+	    <link rel='shortcut icon' type='image/x-icon' href='/stylesheets/images/favicon.ico' />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/networkView.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/boilerplate.css">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans">
+	<script src="/javascripts/viewStates.js"></script>
+	<script src="/javascripts/helper.js"></script>
+	
+	<!-- Retrieving variables from index.js -->
+		<script>
+        	
+        	// list of networks (strings) 
+        	var networks = {{{networkList}}};
+        	
+        	// list of devices (strings)
+        	var devices = {{{deviceList}}};
+        	
+        	//list of device networks
+        	var deviceNetworks = {{{deviceNetworkList}}};
+        	
+        	//list of network connections
+        	var networkConnections = {{{networkConnections}}};
+        	        	      	
+     	</script>
+     	<script>
+     		window.onload = function(){
+     			viewInit();
+     		}
+     	</script>
+</head>
+<body>
+<div id="mainview">
+      <div id="toolbar">
+		<ul class="navMenu">
+			<li>
+			<a id="navLink" href="javascript:history.back()">Return</a>
+			</li>
+		</ul>
+      </div>
+      <div id="simulation">
+      <!-- Div for Heading -->
+		
+			<div id="buttons">
+                	
+            <!-- The time stamp for viewing previous states -->
+			<input class="inputField" id="timeStamp" type="datetime-local" name="timeStamp" value="2015-03-29T12:00:00">
+			
+			<!-- Button for viewing a previous state -->
+			<input class="inputButton" id="viewStateButton" readonly onclick="previous()" value="View Previous State">
+			
+			</div>
+			<div id="canvasDiv">
+				<canvas id="canvas">
+					Your browser does not support the HTML5 canvas tag.
+				</canvas>
+			</div>
+      </div>
+      <div id="logo">Solid Monkey
+      		<div id="mascot"/>
+      </div>
+    </div>
+  </body>
+</html>
+
+	

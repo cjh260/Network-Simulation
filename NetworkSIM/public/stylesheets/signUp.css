@@ -1,0 +1,38 @@
+#signUpDiv input{
+	opacity: 1;
+}
+
+#signUpDiv{
+	width: 45%;
+	height: 65%;
+	margin-left: auto;
+	margin-right: auto;	
+	margin-top: 2%;
+	text-align: center;
+	font-weight: bold;
+	font-family: "Open Sans";
+	font-size: 30px;
+	background-color: #F79824;
+	border: 2px solid;
+	border-radius: 25px;
+	border-color: #FDCA40;
+	padding-bottom:2%;
+}
+
+#email{
+	display: inline-block;
+	width: 85%;
+}
+
+#signUpForm {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5%;
+	width: 55%;
+	height: 15%;
+}
+
+#button{
+	display: inline-block;
+	width: 55%;
+}

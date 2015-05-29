@@ -1,0 +1,24 @@
+#greeting {
+	width: 95%;
+	height: 65%;
+	margin-left: auto;
+	margin-right: auto;	
+	margin-top: 2%;
+	text-align: center;
+	font-weight: bold;
+	font-family: "Open Sans";
+	font-size: 30px;
+	background-color: #F79824;
+	border: 2px solid;
+	border-radius: 25px;
+	border-color: #FDCA40;
+}
+
+#message {
+	text-align: center;
+	font-weight: bold;
+	font-family: "Open Sans";
+	font-size: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+}

@@ -1,0 +1,3 @@
+Put web applications to be run in the simulation here. A sample "counterApp" is provided. Any apps put in this directory will be initialized by the server on start up.
+
+The format of the app must be similar to the provided one. The idea is to make things as flexible as possible for developers designing their own apps. At a bare minimum, their needs to be an app.js file in the main directory of the app that initializes it's own "express" object. Once imported into the simulation it becomes a sub app of the main app.

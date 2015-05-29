@@ -1,0 +1,26 @@
+#buttons {
+	background-color: #F79824;
+	border-radius: 15px;
+	border: 1px solid #FDCA40;
+	height:5%;
+	padding-top: 0.5%;
+	padding-left: 5%;
+	padding-right: 5%;
+	width: 90%;
+	margin-top: 10px;
+	margin-bottom:10px;
+	text-align: center;
+}
+
+#buttons input{
+	opacity: 1;
+}
+
+input, button{
+	height: 100%;
+	width: 45%;
+}
+
+#saveStateButton{
+	width: 92.5%;
+}
